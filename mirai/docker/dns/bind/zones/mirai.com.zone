@@ -1,0 +1,14 @@
+$TTL 86400      ; 1 day
+
+@       IN SOA  ns.domain.com. root.domain.com. (
+                                  2012080701 ; serial
+                                  28800      ; refresh (8 hours)
+                                  7200       ; retry (2 hours)
+                                  604800     ; expire (1 week)
+                                  86400      ; minimum (1 day)
+                                  )
+@	IN	NS	ns.domain.com.
+ns	IN	A	190.0.0.100
+
+cnc	IN	A	190.0.0.225
+report	IN	A	190.0.0.226
