@@ -40,7 +40,6 @@ func main() {
 
     for {
         conn, err := tel.Accept()
-fmt.Println("DBG tel.Accept") //TMP DBG
         if err != nil {
             break
         }

