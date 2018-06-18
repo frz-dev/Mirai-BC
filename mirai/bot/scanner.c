@@ -1,3 +1,4 @@
+//TODO The scanner should look for peers running vulnerable clients
 #define _GNU_SOURCE
 
 #ifdef MIRAI_TELNET

