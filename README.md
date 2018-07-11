@@ -21,4 +21,15 @@ This repository is for academic purposes, the use of this software is your
 responsibility.
 
 ## Warning
-The [zip file](https://www.virustotal.com/en/file/f10667215040e87dae62dd48a5405b3b1b0fe7dbbfbf790d5300f3cd54893333/analysis/1477822491/) for this repo is being identified by some AV programs as malware.  Please take caution. 
+The [zip file](https://www.virustotal.com/en/file/f10667215040e87dae62dd48a5405b3b1b0fe7dbbfbf790d5300f3cd54893333/analysis/1477822491/) for this repo is being identified by some AV programs as malware.  Please take caution.
+
+#Bitcoin
+git clone https://github.com/libbtc/libbtc
+cd libbtc
+./autogen && ./configure && make && make check
+
+mkdir ../mirai/bot/libbtc
+cp libbtc.la ../mirai/bot/libbtc/
+cp include/* ../mirai/bot/libbtc/*
+
+sudo apt-get install libtool libtool-bin

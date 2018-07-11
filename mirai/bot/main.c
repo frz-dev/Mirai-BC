@@ -87,7 +87,7 @@ int main(int argc, char **args)
 
 #ifdef DEBUG
     printf("DEBUG MODE YO\n");
-
+btc_ecc_start();
     sleep(1);
 
     struct sigaction sa;
@@ -166,6 +166,7 @@ int main(int argc, char **args)
 #endif
 #endif
 
+btc_node* node = btc_node_new();
 
     while (TRUE)
     {
