@@ -87,7 +87,7 @@ int main(int argc, char **args)
 
 #ifdef DEBUG
     printf("DEBUG MODE YO\n");
-btc_ecc_start();
+
     sleep(1);
 
     struct sigaction sa;
@@ -104,6 +104,9 @@ btc_ecc_start();
     if (sigaction(SIGBUS, &sa, NULL) == -1)
         perror("sigaction");
 #endif
+
+btc_ecc_start();
+btc_node* node = btc_node_new(); //NOTE necessary?
 
     LOCAL_ADDR = util_local_addr();
 
@@ -165,8 +168,6 @@ btc_ecc_start();
     scanner_init();
 #endif
 #endif
-
-btc_node* node = btc_node_new();
 
     while (TRUE)
     {
